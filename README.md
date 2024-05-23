@@ -7,7 +7,7 @@ This is a simple Applicant Tracking System (ATS) project built with Python. The 
 ```
 ATS
 ├── ats.py
-├── jd
+├── job_description
 │   ├── jd_1.txt
 │   └── jd_2.txt
 ├── resumes
