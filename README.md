@@ -16,7 +16,7 @@ ATS
 ```
 
 - `ats.py`: The main Python script that runs the ATS.
-- `jd/`: A directory containing job description text files.
+- `job_description/`: A directory containing job description text files.
 - `resumes/`: A directory containing candidate resume text files.
 - `README.md`: This file, providing an overview of the project.
 
