@@ -36,7 +36,7 @@ ATS
 
 ### Adding Job Descriptions and Resumes
 
-To add new job descriptions or candidate resumes, simply create new text files with the appropriate content and place them in the `jd/` or `resumes/` directories, respectively.
+To add new job descriptions or candidate resumes, simply create new text files with the appropriate content and place them in the `job_description/` or `resumes/` directories, respectively.
 
 ### Contributing
 
