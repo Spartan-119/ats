@@ -6,7 +6,9 @@ This is a simple Applicant Tracking System (ATS) project built with Python. The 
 
 ```
 ATS
-├── ats.py
+├── src
+│   ├── ats.py
+│   └── text_cleaner.py
 ├── job_description
 │   ├── jd_1.txt
 │   └── jd_2.txt
@@ -15,7 +17,7 @@ ATS
 └── README.md
 ```
 
-- `ats.py`: The main Python script that runs the ATS.
+- `src`: Contains the main src code.
 - `job_description/`: A directory containing job description text files.
 - `resumes/`: A directory containing candidate resume text files.
 - `README.md`: This file, providing an overview of the project.
