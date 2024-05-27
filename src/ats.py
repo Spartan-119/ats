@@ -61,3 +61,18 @@ print(extract_skills(resume_content))
 
 # # printing the commong skills
 # print(get_common_skills(jd_content, extract_skills(resume_content)))
+
+###########################################
+
+# method to extract names
+def extract_names(resume_content):
+    names = [ent.text for ent in resume_content if resume_content.label_ == "PERSON"]
+    return names
+
+# method to extract emails using regex
+def extract_emails(resume_content):
+    email_pattern = r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b"
+    emails = re.findall(email_pattern, resume_content)
+    return emails
+
+print(extract_emails(resume_content))
