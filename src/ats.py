@@ -57,7 +57,7 @@ def get_common_skills(jd, resume):
     return jd.intersection(resume)
 
 # printing the extracted skills
-print(extract_skills(resume_content))
+# print(extract_skills(resume_content))
 
 # # printing the commong skills
 # print(get_common_skills(jd_content, extract_skills(resume_content)))
@@ -75,4 +75,25 @@ def extract_emails(resume_content):
     emails = re.findall(email_pattern, resume_content)
     return emails
 
-print(extract_emails(resume_content))
+# method to extract phone numbers using regex
+def extract_phone_numbers(resume_content):
+    pattern = r'\b(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}\b'
+    phone_numbers = re.findall(pattern, resume_content)
+    return phone_numbers
+
+# method to extract work experience
+def extract_experience(resume_content):
+     # Define the pattern to match the experience section
+    pattern = r'Experience\s*(?:\r?\n\s*)*(.+?)(?:\r?\n\s*\r?\n|$)'
+    
+    # Search for the experience section
+    match = re.search(pattern, resume_content, re.DOTALL)
+    
+    if match:
+        # Return the matched experience section
+        return match.group(1).strip()
+    else:
+        # Return an empty string if experience section not found
+        return ''
+
+print(extract_experience(resume_content))
