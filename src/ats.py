@@ -15,6 +15,40 @@ with open('job_descriptions/jd_2.txt', 'r') as f:
 with open('meta/skills.txt', 'r') as f:
     skills = f.read().split('\n')
 
+
+RESUME_SECTIONS = [
+    "Contact Information",
+    "Objective",
+    "Summary",
+    "Education",
+    "Experience",
+    "Skills",
+    "Projects",
+    "Certifications",
+    "Licenses",
+    "Awards",
+    "Honors",
+    "Publications",
+    "References",
+    "Technical Skills",
+    "Computer Skills",
+    "Programming Languages",
+    "Software Skills",
+    "Soft Skills",
+    "Language Skills",
+    "Professional Skills",
+    "Transferable Skills",
+    "Work Experience",
+    "Professional Experience",
+    "Employment History",
+    "Internship Experience",
+    "Volunteer Experience",
+    "Leadership Experience",
+    "Research Experience",
+    "Teaching Experience",
+]
+
+
 def get_cosine_similarity(resume_content, jd_content):
     # Create the Document Term Matrix
     count_vectorizer = CountVectorizer()
@@ -83,8 +117,8 @@ def extract_phone_numbers(resume_content):
 
 # method to extract work experience
 def extract_experience(resume_content):
-     # Define the pattern to match the experience section
-    pattern = r'Experience\s*(?:\r?\n\s*)*(.+?)(?:\r?\n\s*\r?\n|$)'
+    # Define the pattern to match the experience section
+    pattern = r'Experience\s*(?:\r?\n\s*)*(.+?)(?=\r?\n\s*(?:{}))'.format('|'.join(RESUME_SECTIONS))
     
     # Search for the experience section
     match = re.search(pattern, resume_content, re.DOTALL)
