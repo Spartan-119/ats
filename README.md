@@ -2,6 +2,8 @@
 
 This is a simple Applicant Tracking System (ATS) project built with Python. The ATS is designed to help streamline the recruitment process by matching job descriptions with candidate resumes.
 
+![ATS_Thumbnail](meta/thumbnail_1.jpeg)
+
 ### Project Structure
 
 ```
