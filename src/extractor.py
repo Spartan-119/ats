@@ -163,10 +163,3 @@ class ResumeParser:
             return match.group(1).strip()
         else:
             return ''
-
-# driver
-parser = ResumeParser()
-parser.load_resume('resumes/resume_0.txt')
-parser.load_job_description('job_descriptions/jd_2.txt')
-parser.load_skills('meta/skills.txt')
-# print(parser.extract_experience())
