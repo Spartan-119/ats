@@ -10,12 +10,12 @@ This is a simple Applicant Tracking System (ATS) project built with Python. The 
 ATS
 ├── src
 │   ├── ats.py
+|   ├── extractor.py
 │   └── text_cleaner.py
 ├── job_description
-│   ├── jd_1.txt
-│   └── jd_2.txt
+│   ├── contains job descriptions # .gitignore
 ├── resumes
-│   └── resume_0.txt
+│   └── contains resumes # .gitignore
 └── README.md
 ```
 
