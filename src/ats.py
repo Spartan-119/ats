@@ -4,7 +4,7 @@ from text_cleaner import TextCleaner
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-jd_path = "job_descriptions/jd_1.txt"
+jd_path = "job_descriptions/jd_2.txt"
 with open(jd_path, 'r') as file:
     jd = file.read()
 
