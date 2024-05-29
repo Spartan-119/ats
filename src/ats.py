@@ -125,7 +125,7 @@ class ATS:
 if __name__ == "__main__":
     # Define the file paths
     resume_path = 'resumes/resume_0.txt'
-    jd_path = 'job_descriptions/jd_2.txt'
+    jd_path = 'job_descriptions/jd_3.txt'
     skills_path = 'meta/skills.txt'
     
     # Create an instance of ATS
