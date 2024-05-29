@@ -6,26 +6,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 class ATS:
     """
     A class to match a resume with a job description using TF-IDF vectorization and cosine similarity.
-    
-    Attributes:
-    -----------
-    parser : ResumeParser
-        An instance of the ResumeParser to handle resume and job description parsing.
-    cleaned_experience : str
-        The cleaned experience text extracted from the resume.
-    jd : str
-        The job description text.
-        
-    Methods:
-    --------
-    load_data(self, resume_path, jd_path, skills_path):
-        Loads and processes the resume, job description, and skills data.
-        
-    clean_experience(self, experience):
-        Cleans the extracted experience text from the resume.
-        
-    compute_similarity(self):
-        Computes the cosine similarity between the cleaned resume experience and the job description.
     """
     
     def __init__(self):
