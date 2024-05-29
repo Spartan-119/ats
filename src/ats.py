@@ -34,6 +34,7 @@ class ATS:
         """
         self.parser = ResumeParser()
         self.cleaned_experience = None
+        self.cleaned_skills = None
         self.jd = None
 
     def load_data(self, resume_path, jd_path, skills_path):
@@ -59,10 +60,14 @@ class ATS:
         self.parser.load_skills(skills_path)
 
         # Extract experience section from the resume
-        experience = self.parser.extract_experience()
-        
+        experience = self.parser.extract_experience()        
         # Clean the extracted experience text
         self.clean_experience(experience)
+
+        # Extract skills from the resume section
+        skills = " ".join(self.parser.extract_skills())
+        # clean the extracted skills text
+        self.clean_skills(skills)
 
     def clean_experience(self, experience):
         """
@@ -76,6 +81,18 @@ class ATS:
         cleaner = TextCleaner()
         self.cleaned_experience = cleaner.clean_text(experience)
 
+    def clean_skills(self, skills):
+        """
+        Cleans the extracted skills text from the resume.
+        
+        Parameters:
+        -----------
+        skills : str
+            The raw skills text extracted from the resume.
+        """
+        cleaner = TextCleaner()
+        self.cleaned_skills = cleaner.clean_text(skills)
+
     def compute_similarity(self):
         """
         Computes the cosine similarity between the cleaned resume experience and the job description.
@@ -87,9 +104,12 @@ class ATS:
         """
         # Initialize the TF-IDF Vectorizer
         vectorizer = TfidfVectorizer()
+
+        # concatenating cleaned experience and cleaned skills
+        cleaned_resume = self.cleaned_experience + self.cleaned_skills
         
         # Fit and transform the cleaned experience and job description texts
-        tfidf_matrix = vectorizer.fit_transform([self.cleaned_experience, self.jd])
+        tfidf_matrix = vectorizer.fit_transform([cleaned_resume, self.jd])
         
         # Extract the TF-IDF vectors for the resume experience and job description
         resume_tfidf = tfidf_matrix[0]
