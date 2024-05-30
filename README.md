@@ -2,7 +2,7 @@
 
 This is a simple Applicant Tracking System (ATS) project built with Python. The ATS is designed to help streamline the recruitment process by matching job descriptions with candidate resumes.
 
-![ATS_Thumbnail](meta/thumbnail_1.jpeg)
+![ATS_Thumbnail](meta/This-is-my-resume-gif.gif)
 
 ### Project Structure
 
@@ -31,10 +31,10 @@ ATS
 1. Make sure you have Python installed on your system.
 2. Clone or download this repository to your local machine.
 3. Navigate to the project directory in your terminal or command prompt.
-4. Run the `ats.py` script using the following command:
+4. Run the `ats_transformer.py` (for higher precision) script using the following command:
 
    ```
-   python ats.py
+   python ats_transformer.py
    ```
 
 5. The script will read the job descriptions and candidate resumes from the respective directories and perform the matching process.
