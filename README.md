@@ -9,7 +9,9 @@ This is a simple Applicant Tracking System (ATS) project built with Python. The 
 ```
 ATS
 ├── src
-│   ├── ats.py
+│   ├── __init__.py
+│   ├── ats_tfidf.py
+│   ├── ats_transformer.py
 |   ├── extractor.py
 │   └── text_cleaner.py
 ├── job_description
