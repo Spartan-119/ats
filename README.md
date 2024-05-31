@@ -30,7 +30,9 @@ ATS
 ### Usage
 
 1. Make sure you have Python installed on your system.
-2. Run the `ats_transformer.py` (for higher precision) script using the following command on Windows:
+2. Run the `ats_transformer.py` (for higher precision) script using the following command -->
+
+on Windows:
 
    ```
    git clone https://github.com/Spartan-119/ats.git
