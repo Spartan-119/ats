@@ -45,12 +45,12 @@ on Windows:
 or on Linux or MacOS:
 
    ```
-      git clone https://github.com/Spartan-119/ats.git
-      cd ats
-      python -m venv ats_venv
-      source ats_venv/bin/activate
-      pip install -r requirements.txt
-      python src/ats_transformer.py
+   git clone https://github.com/Spartan-119/ats.git
+   cd ats
+   python -m venv ats_venv
+   source ats_venv/bin/activate
+   pip install -r requirements.txt
+   python src/ats_transformer.py
    ```
 3. The script will read the job descriptions and candidate resumes from the respective directories and perform the matching process.
 4. The results of the matching process will be displayed in the terminal or command prompt.
