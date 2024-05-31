@@ -67,16 +67,33 @@ class ATSTransformer:
         self.cleaned_skills = cleaner.clean_text(skills)
 
     def compute_similarity(self):
+        """
+        Computes the similarity score between the cleaned resume and cleaned job description text using the SentenceTransformer model.
+
+        Returns:
+            float: The similarity score between the cleaned resume and cleaned job description text.
+        """
         model = SentenceTransformer('all-MiniLM-L6-v2')
         cleaned_resume = self.cleaned_experience + self.cleaned_skills
-        sentences = [cleaned_resume, self.jd]
+        cleaned_jd_text = self.clean_jd()
+        sentences = [cleaned_resume, cleaned_jd_text]
         embeddings1 = model.encode(sentences[0])
         embeddings2 = model.encode(sentences[1])
         
         similarity_score = model.similarity(embeddings1, embeddings2)
 
         return similarity_score
+    
+    def clean_jd(self):
+        """
+        Cleans the job description text by applying text cleaning techniques.
 
+        Returns:
+            str: The cleaned job description text.
+        """
+        cleaner = TextCleaner()
+        cleaned_jd = cleaner.clean_text(self.jd)
+        return cleaned_jd
 
 # Example usage:
 if __name__ == "__main__":
