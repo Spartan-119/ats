@@ -13,6 +13,7 @@ ATS
 │   ├── ats_tfidf.py
 │   ├── ats_transformer.py
 |   ├── extractor.py
+|   ├── pdf2txt.py
 │   └── text_cleaner.py
 ├── job_description
 │   ├── contains job descriptions # .gitignore
