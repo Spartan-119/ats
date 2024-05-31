@@ -30,14 +30,26 @@ ATS
 ### Usage
 
 1. Make sure you have Python installed on your system.
-2. Clone or download this repository to your local machine.
-3. Navigate to the project directory in your terminal or command prompt.
-4. Run the `ats_transformer.py` (for higher precision) script using the following command:
+2. Run the `ats_transformer.py` (for higher precision) script using the following command on Windows:
 
    ```
-   python ats_transformer.py
+   git clone https://github.com/Spartan-119/ats.git
+   cd ats
+   python -m venv ats_venv
+   ats_venv\Scripts\activate
+   pip install -r requirements.txt
+   python src/ats_transformer.py
    ```
+or on Linux or MacOS:
 
+   ```
+      git clone https://github.com/Spartan-119/ats.git
+      cd ats
+      python -m venv ats_venv
+      source ats_venv/bin/activate
+      pip install -r requirements.txt
+      python src/ats_transformer.py
+   ```
 5. The script will read the job descriptions and candidate resumes from the respective directories and perform the matching process.
 6. The results of the matching process will be displayed in the terminal or command prompt.
 
