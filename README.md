@@ -50,8 +50,8 @@ or on Linux or MacOS:
       pip install -r requirements.txt
       python src/ats_transformer.py
    ```
-5. The script will read the job descriptions and candidate resumes from the respective directories and perform the matching process.
-6. The results of the matching process will be displayed in the terminal or command prompt.
+3. The script will read the job descriptions and candidate resumes from the respective directories and perform the matching process.
+4. The results of the matching process will be displayed in the terminal or command prompt.
 
 ### Adding Job Descriptions and Resumes
 
