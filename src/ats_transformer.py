@@ -98,8 +98,8 @@ class ATSTransformer:
 # Example usage:
 if __name__ == "__main__":
     # Define the file paths
-    resume_path = 'resumes/resume_0.txt'
-    jd_path = 'job_descriptions/jd_2.txt'
+    resume_path = 'resumes/output.txt'
+    jd_path = 'job_descriptions/jd_1.txt'
     skills_path = 'meta/skills.txt'
     
     # Create an instance of ATS
