@@ -2,4 +2,4 @@
 job_descriptions/
 resumes/
 ATS/
-ats.py
+ATS/src/ats.py
