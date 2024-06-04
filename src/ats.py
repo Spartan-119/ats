@@ -89,6 +89,8 @@ class ATS:
         # clean the extracted skills text
         self.clean_skills(skills)
 
+        return experience, skills
+
     def clean_experience(self, experience):
         """
         Cleans the extracted experience text from the resume.
@@ -100,6 +102,7 @@ class ATS:
         """
         cleaner = TextCleaner()
         self.cleaned_experience = cleaner.clean_text(experience)
+        return self.cleaned_experience
 
     def clean_skills(self, skills):
         """
@@ -112,8 +115,9 @@ class ATS:
         """
         cleaner = TextCleaner()
         self.cleaned_skills = cleaner.clean_text(skills)
+        return self.cleaned_skills
 
-    def compute_similarity(self):
+    def compute_similarity(self, experience, skills):
         """
         Computes the similarity score between the cleaned resume and cleaned job description text using the SentenceTransformer model.
 
@@ -121,7 +125,8 @@ class ATS:
             float: The similarity score between the cleaned resume and cleaned job description text.
         """
         model = SentenceTransformer('all-MiniLM-L6-v2')
-        cleaned_resume = self.cleaned_experience + self.cleaned_skills
+
+        cleaned_resume = experience + skills
         cleaned_jd_text = self.clean_jd()
         sentences = [cleaned_resume, cleaned_jd_text]
         embeddings1 = model.encode(sentences[0])
@@ -158,8 +163,10 @@ if __name__ == "__main__":
     ats = ATS()
     
     # Load and process data
-    ats.load_data(resume_text, jd_text, skills_path)
+    experience, skills = ats.load_data(resume_text, jd_text, skills_path)[0], ats.load_data(resume_text, jd_text, skills_path)[1]
+
     
+   
     # Compute and print the similarity score
-    similarity_score = ats.compute_similarity()
+    similarity_score = ats.compute_similarity(experience, skills)
     print(f"The similarity score between the resume and job description is: {round(similarity_score.item() * 100, 2)}%")
