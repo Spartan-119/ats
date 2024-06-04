@@ -30,7 +30,8 @@ ATS
 ### Usage
 
 1. Make sure you have Python installed on your system.
-2. Run the `ats_transformer.py` (for higher precision) script using the following command -->
+2. Make two folders --> `resumes` and `job_descriptions` where your resumes and job descriptions will lie in <b>text (.txt)</b> format. Make sure the newly created folders and files follow the above project tree structure.
+3. Run the `ats_transformer.py` (for higher precision) script using the following command -->
 
 on Windows:
 
@@ -52,8 +53,8 @@ or on Linux or MacOS:
    pip install -r requirements.txt
    python src/ats_transformer.py
    ```
-3. The script will read the job descriptions and candidate resumes from the respective directories and perform the matching process.
-4. The results of the matching process will be displayed in the terminal or command prompt.
+4. The script will read the job descriptions and candidate resumes from the respective directories and perform the matching process.
+5. The results of the matching process will be displayed in the terminal or command prompt.
 
 ### Adding Job Descriptions and Resumes
 
