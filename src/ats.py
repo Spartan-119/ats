@@ -1,4 +1,6 @@
-# shit module I suppose?
+# PLEASE DO NOT RUN THIS FILE YET.
+# THIS IS YET UNDER DEVELOPMENT.
+# I AM JUST ADDING IT TO GITHUB TO KEEP A COPY ON REMOTE SERVER.
 import re
 import spacy
 from sentence_transformers import SentenceTransformer
