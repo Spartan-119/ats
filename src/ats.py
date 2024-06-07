@@ -28,10 +28,10 @@ class ATS:
         Initializes the ATS.
         """
         self.nlp = spacy.load('en_core_web_sm')
-        self.resume_content = None
-        self.jd_content = None
-        self.cleaned_experience = None
-        self.cleaned_skills = None
+        # self.resume_content = None
+        # self.jd_content = None
+        # self.cleaned_experience = None
+        # self.cleaned_skills = None
 
     def load_resume(self, resume_content):
         """
@@ -79,13 +79,19 @@ class ATS:
 
         :return: Experience section as a string
         """
-        pattern = r'Experience\s*(?:\r?\n\s*)*(.+?)(?=\r?\n\s*(?:{}))'.format('|'.join(self.RESUME_SECTIONS))
-        match = re.search(pattern, self.resume_content, re.DOTALL)
-        
-        if match:
-            return match.group(1).strip()
-        else:
-            return ''
+        experience_start = self.resume_content.find("Experience")
+        if experience_start == -1:
+            return ""
+
+        experience_end = len(self.resume_content)
+        for section in self.RESUME_SECTIONS:
+            if section != "Experience":
+                section_start = self.resume_content.find(section, experience_start)
+                if section_start != -1:
+                    experience_end = min(experience_end, section_start)
+
+        experience_section = self.resume_content[experience_start:experience_end].strip()
+        return experience_section
 
     def clean_experience(self, experience):
         """
